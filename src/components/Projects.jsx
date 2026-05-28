@@ -3,7 +3,7 @@ import { projects } from "../data/portfolio";
 export default function Projects() {
   return (
     <section>
-      <h2>Projects</h2>
+      <h2>Featured Projects</h2>
       {projects.map((project) => (
         <article key={project.title} className="project-card">
           <h3>{project.title}</h3>
