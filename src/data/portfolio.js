@@ -25,7 +25,7 @@ export const projects = [
     description:
       "React + Vite portfolio deployed automatically to GitHub Pages via GitHub Actions on every push to main.",
     tags: ["React", "Vite", "GitHub Actions", "GitHub Pages"],
-    link: "https://github.com/Saurabhsds13/Git-Action-folio",
+    link: "https://github.com/Saurabhsds13/saurabh-portfolio",
   },
 ];
 
