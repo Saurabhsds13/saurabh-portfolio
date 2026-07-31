@@ -24,7 +24,7 @@ export default function About() {
     <section id="about" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Label */}
-        <div className="flex items-center gap-3 mb-4 relative">
+        <div className="reveal flex items-center gap-3 mb-4 relative">
           <span className="font-mono text-sm text-accent">01.</span>
           <h2 className="text-2xl md:text-3xl font-bold text-text-primary">About Me</h2>
           <div className="h-px flex-1 bg-glass-border ml-4" />
@@ -32,16 +32,16 @@ export default function About() {
         </div>
 
         {/* Description */}
-        <p className="text-lg text-text-secondary max-w-3xl leading-relaxed mb-12">
+        <p className="reveal text-lg text-text-secondary max-w-3xl leading-relaxed mb-12">
           {personalInfo.description}
         </p>
 
         {/* Highlight Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 stagger">
           {highlights.map((item) => (
             <div
               key={item.title}
-              className="glass-card p-6 group hover:border-accent/30 transition-all duration-300 hover:-translate-y-1"
+              className="reveal-scale glass-card p-6 group hover:border-accent/30 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="text-accent mb-4 group-hover:scale-110 transition-transform duration-300">
                 {item.icon}

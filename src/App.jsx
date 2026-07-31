@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import useScrollReveal from "./hooks/useScrollReveal";
 import LoadingScreen from "./components/LoadingScreen";
 import ScrollProgress from "./components/ScrollProgress";
 import CommandPalette from "./components/CommandPalette";
@@ -20,6 +21,8 @@ import ParticleField from "./components/ParticleField";
 export default function App() {
   const [isDark, setIsDark] = useState(true);
 
+  useScrollReveal();
+
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setIsDark(!document.documentElement.classList.contains("light"));
@@ -35,6 +38,7 @@ export default function App() {
       <ScrollProgress />
       <CommandPalette />
       <BackToTop />
+      <a href="#about" className="skip-link">Skip to content</a>
       <div className="noise grid-bg scanlines relative min-h-screen" style={{ position: 'relative', zIndex: 2 }}>
         {isDark && <ParticleField />}
         <Navbar />

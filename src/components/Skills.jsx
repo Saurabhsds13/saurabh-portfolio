@@ -22,7 +22,7 @@ export default function Skills() {
     <section id="skills" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="reveal mb-12">
           <div className="flex items-center gap-3 mb-4 relative">
             <span className="font-mono text-sm text-accent">02.</span>
             <h2 className="text-2xl md:text-3xl font-bold text-text-primary">
@@ -37,15 +37,14 @@ export default function Skills() {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 stagger">
           {Object.entries(skills).map(([category, { icon, items }], i) => (
             <div
               key={category}
-              className={`glass-card p-6 group hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 ${
+              className={`reveal-scale glass-card p-6 group hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 ${
                 i === 0 ? "md:col-span-2 lg:col-span-1" : ""
               }`}
             >
-              {/* Category Header */}
               <div className="flex items-center gap-3 mb-5">
                 <div className="text-accent group-hover:scale-110 transition-transform duration-300">
                   {iconMap[icon]}
@@ -55,7 +54,6 @@ export default function Skills() {
                 </h3>
               </div>
 
-              {/* Skills */}
               <div className="flex flex-wrap gap-2">
                 {items.map((skill) => (
                   <span

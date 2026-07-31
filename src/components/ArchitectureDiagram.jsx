@@ -3,7 +3,7 @@ export default function ArchitectureDiagram() {
     <section id="system-design" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="reveal mb-12">
           <div className="flex items-center gap-3 mb-4 relative">
             <span className="font-mono text-sm text-accent">07.</span>
             <h2 className="text-2xl md:text-3xl font-bold text-text-primary">
@@ -19,7 +19,7 @@ export default function ArchitectureDiagram() {
         </div>
 
         {/* Architecture Diagram */}
-        <div className="glass-card p-6 md:p-10 overflow-x-auto">
+        <div className="reveal-scale glass-card p-6 md:p-10 overflow-x-auto">
           <svg
             viewBox="0 0 900 520"
             className="w-full h-auto min-w-[700px]"
@@ -190,7 +190,7 @@ export default function ArchitectureDiagram() {
         </div>
 
         {/* Key Design Decisions */}
-        <div className="grid md:grid-cols-3 gap-4 mt-8">
+        <div className="grid md:grid-cols-3 gap-4 mt-8 stagger">
           <div className="glass-card p-5">
             <h4 className="text-sm font-semibold text-accent font-mono mb-2">Why Kafka?</h4>
             <p className="text-xs text-text-secondary leading-relaxed">

@@ -32,7 +32,7 @@ export default function CurrentlyLearning() {
     <section id="learning" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="reveal mb-12">
           <div className="flex items-center gap-3 mb-4 relative">
             <span className="font-mono text-sm text-accent">09.</span>
             <h2 className="text-2xl md:text-3xl font-bold text-text-primary">
@@ -47,11 +47,11 @@ export default function CurrentlyLearning() {
         </div>
 
         {/* Learning Cards */}
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-2 gap-5 stagger">
           {learningItems.map((item) => (
             <div
               key={item.title}
-              className="glass-card p-6 group hover:border-accent/30 transition-all duration-300"
+              className="reveal-scale glass-card p-6 group hover:border-accent/30 transition-all duration-300"
             >
               <div className="flex items-start gap-4">
                 <div className="p-2.5 rounded-lg bg-accent/10 text-accent mt-0.5 group-hover:scale-110 transition-transform">

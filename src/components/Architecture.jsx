@@ -13,7 +13,7 @@ export default function Architecture() {
     <section id="architecture" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="reveal mb-12">
           <div className="flex items-center gap-3 mb-4 relative">
             <span className="font-mono text-sm text-accent">03.</span>
             <h2 className="text-2xl md:text-3xl font-bold text-text-primary">
@@ -28,13 +28,12 @@ export default function Architecture() {
         </div>
 
         {/* Philosophy Cards */}
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-2 gap-5 stagger">
           {architecturePhilosophy.map((item, i) => (
             <div
               key={item.principle}
-              className="glass-card p-6 group hover:border-accent/30 transition-all duration-300 relative overflow-hidden"
+              className={`${i % 2 === 0 ? "reveal-left" : "reveal-right"} glass-card p-6 group hover:border-accent/30 transition-all duration-300 relative overflow-hidden`}
             >
-              {/* Background Number */}
               <span className="absolute top-4 right-6 text-6xl font-bold text-white/[0.02] select-none">
                 0{i + 1}
               </span>

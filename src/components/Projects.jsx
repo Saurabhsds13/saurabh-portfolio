@@ -9,7 +9,7 @@ export default function Projects() {
     <section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="reveal mb-12">
           <div className="flex items-center gap-3 mb-4 relative">
             <span className="font-mono text-sm text-accent">05.</span>
             <h2 className="text-2xl md:text-3xl font-bold text-text-primary">
@@ -28,13 +28,11 @@ export default function Projects() {
           {featured.map((project) => (
             <article
               key={project.title}
-              className="glass-card p-6 md:p-8 group hover:border-accent/30 transition-all duration-300 relative overflow-hidden"
+              className="reveal glass-card p-6 md:p-8 group hover:border-accent/30 transition-all duration-300 relative overflow-hidden"
             >
-              {/* Accent gradient on hover */}
               <div className="absolute inset-0 bg-gradient-to-r from-accent/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative z-10">
-                {/* Architecture Badge */}
                 <div className="flex items-center gap-2 mb-3">
                   <FiBox size={14} className="text-cyan" />
                   <span className="text-xs font-mono text-cyan uppercase tracking-wider">
@@ -42,7 +40,6 @@ export default function Projects() {
                   </span>
                 </div>
 
-                {/* Title & Link */}
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-xl font-semibold text-text-primary group-hover:text-accent transition-colors duration-300">
                     {project.title}
@@ -60,12 +57,10 @@ export default function Projects() {
                   )}
                 </div>
 
-                {/* Description */}
                 <p className="text-sm text-text-secondary leading-relaxed mb-4 max-w-3xl">
                   {project.description}
                 </p>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
@@ -84,14 +79,14 @@ export default function Projects() {
         {/* Other Projects */}
         {other.length > 0 && (
           <div>
-            <h3 className="text-lg font-semibold text-text-primary mb-4">
+            <h3 className="reveal text-lg font-semibold text-text-primary mb-4">
               Other Notable Projects
             </h3>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 stagger">
               {other.map((project) => (
                 <article
                   key={project.title}
-                  className="glass-card p-5 hover:border-accent/30 transition-all duration-300"
+                  className="reveal-scale glass-card p-5 hover:border-accent/30 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <FiBox size={14} className="text-cyan" />
