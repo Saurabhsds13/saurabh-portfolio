@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -40,27 +41,33 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                className="text-sm text-text-secondary hover:text-accent transition-colors duration-200 font-medium"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-8">
+            {navItems.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="text-sm text-text-secondary hover:text-accent transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle />
+        </div>
 
         {/* Mobile Toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-text-primary text-2xl"
-          aria-label="Toggle navigation menu"
-        >
-          {mobileOpen ? <HiX /> : <HiMenuAlt3 />}
-        </button>
+        <div className="flex md:hidden items-center gap-3">
+          <ThemeToggle />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-text-primary text-2xl"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileOpen ? <HiX /> : <HiMenuAlt3 />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
