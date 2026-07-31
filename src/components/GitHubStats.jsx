@@ -1,7 +1,11 @@
-import { FiGithub, FiStar, FiGitBranch, FiCode } from "react-icons/fi";
+import { useState } from "react";
+import { FiGithub, FiStar, FiGitBranch, FiCode, FiExternalLink } from "react-icons/fi";
 
 export default function GitHubStats() {
   const username = "Saurabhsds13";
+  // The heatmap is rendered by a third-party service, so degrade gracefully
+  // instead of showing a broken image if it is unreachable.
+  const [chartFailed, setChartFailed] = useState(false);
 
   return (
     <section id="github" className="py-24 px-6">
@@ -36,14 +40,27 @@ export default function GitHubStats() {
           </div>
 
           {/* Contribution heatmap using GitHub's public image */}
-          <div className="overflow-x-auto pb-2">
-            <img
-              src={`https://ghchart.rshah.org/6366f1/${username}`}
-              alt="GitHub contribution chart"
-              className="w-full min-w-[700px] rounded-lg opacity-90 hover:opacity-100 transition-opacity"
-              loading="lazy"
-            />
-          </div>
+          {chartFailed ? (
+            <a
+              href={`https://github.com/${username}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-10 rounded-lg border border-dashed border-glass-border text-sm text-text-muted hover:text-accent hover:border-accent/40 transition-colors"
+            >
+              Contribution chart unavailable — view on GitHub
+              <FiExternalLink size={14} />
+            </a>
+          ) : (
+            <div className="overflow-x-auto pb-2">
+              <img
+                src={`https://ghchart.rshah.org/6366f1/${username}`}
+                alt={`GitHub contribution chart for ${username}`}
+                className="w-full min-w-[700px] rounded-lg opacity-90 hover:opacity-100 transition-opacity"
+                loading="lazy"
+                onError={() => setChartFailed(true)}
+              />
+            </div>
+          )}
         </div>
 
         {/* GitHub Stats Cards */}

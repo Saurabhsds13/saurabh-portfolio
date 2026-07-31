@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { personalInfo, stats } from "../data/portfolio";
 import { FiGithub, FiLinkedin, FiMail, FiDownload } from "react-icons/fi";
 import { contact } from "../data/portfolio";
+import { assetUrl } from "../utils/assetUrl";
 import { useState, useEffect } from "react";
 
 function TypeWriter({ text, delay = 0 }) {
@@ -38,6 +39,8 @@ function TypeWriter({ text, delay = 0 }) {
 }
 
 export default function Hero() {
+  const resumeHref = assetUrl(personalInfo.resumeFile);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       {/* Gradient Orbs */}
@@ -131,14 +134,16 @@ export default function Hero() {
           >
             ./contact --me
           </a>
-          <a
-            href="/saurabh-portfolio/resume.pdf"
-            download
-            className="flex items-center gap-2 px-8 py-3 rounded-full border border-glass-border hover:border-emerald text-text-secondary hover:text-emerald font-medium transition-all duration-300 hover:-translate-y-0.5 font-mono text-sm"
-          >
-            <FiDownload size={16} />
-            Resume
-          </a>
+          {resumeHref && (
+            <a
+              href={resumeHref}
+              download
+              className="flex items-center gap-2 px-8 py-3 rounded-full border border-glass-border hover:border-emerald text-text-secondary hover:text-emerald font-medium transition-all duration-300 hover:-translate-y-0.5 font-mono text-sm"
+            >
+              <FiDownload size={16} />
+              Resume
+            </a>
+          )}
         </motion.div>
 
         {/* Social Links */}

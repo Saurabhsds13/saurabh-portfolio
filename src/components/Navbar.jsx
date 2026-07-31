@@ -10,6 +10,8 @@ const navItems = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "System Design", href: "#system-design" },
+  { label: "GitHub", href: "#github" },
+  { label: "Learning", href: "#learning" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -41,13 +43,13 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-5">
+          <ul className="flex items-center gap-5">
             {navItems.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="text-sm text-text-secondary hover:text-accent transition-colors duration-200 font-medium"
+                  className="text-[13px] text-text-secondary hover:text-accent transition-colors duration-200 font-medium whitespace-nowrap"
                 >
                   {item.label}
                 </a>

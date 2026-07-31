@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { FiSearch, FiArrowRight, FiX } from "react-icons/fi";
+import { FiSearch, FiArrowRight } from "react-icons/fi";
+import { personalInfo } from "../data/portfolio";
+import { assetUrl } from "../utils/assetUrl";
 
 const commands = [
   { label: "About Me", section: "#about", hint: "whoami" },
@@ -22,11 +24,13 @@ export default function CommandPalette() {
   const [selected, setSelected] = useState(0);
   const inputRef = useRef(null);
 
-  const filtered = commands.filter(
-    (cmd) =>
-      cmd.label.toLowerCase().includes(query.toLowerCase()) ||
-      cmd.hint.toLowerCase().includes(query.toLowerCase())
-  );
+  const filtered = commands
+    .filter((cmd) => cmd.section !== "resume" || Boolean(personalInfo.resumeFile))
+    .filter(
+      (cmd) =>
+        cmd.label.toLowerCase().includes(query.toLowerCase()) ||
+        cmd.hint.toLowerCase().includes(query.toLowerCase())
+    );
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -60,7 +64,7 @@ export default function CommandPalette() {
     setQuery("");
 
     if (cmd.section === "resume") {
-      window.open("/saurabh-portfolio/resume.pdf", "_blank");
+      window.open(assetUrl(personalInfo.resumeFile), "_blank", "noopener");
     } else if (cmd.section === "theme") {
       document.documentElement.classList.toggle("light");
       localStorage.setItem(

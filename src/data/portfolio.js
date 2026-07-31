@@ -4,7 +4,9 @@ export const personalInfo = {
   tagline: "I build systems that never sleep.",
   description:
     "Backend Software Engineer with 3+ years of experience building large-scale microservices for enterprise retail e-commerce. I specialize in event-driven architecture, real-time inventory automation, competitive pricing engines, and high-throughput backend services using Java, Spring Boot, Kafka, and Redis.",
-  resumeUrl: "#",
+  // File name inside the /public folder. Set to "" to hide the resume button
+  // everywhere. Resolved against the Vite base path at runtime.
+  resumeFile: "Saurabh_Sonawane_Resume.pdf",
 };
 
 export const stats = [
