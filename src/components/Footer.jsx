@@ -7,9 +7,14 @@ export default function Footer() {
           <span className="text-text-muted/50">|</span>{" "}
           Built by <span className="text-text-secondary">Saurabh Sonawane</span>
         </p>
-        <p className="text-xs text-text-muted font-mono tracking-wider">
-          Java • Spring Boot • Kafka • React • 01100010 01110101 01101001 01101100 01110100
-        </p>
+        <div className="flex items-center gap-4">
+          <kbd className="text-[10px] font-mono text-text-muted border border-glass-border rounded px-2 py-1 hover:border-accent/40 hover:text-accent transition-colors cursor-help" title="Open command palette">
+            Ctrl + K
+          </kbd>
+          <p className="text-xs text-text-muted font-mono tracking-wider">
+            Java • Spring Boot • Kafka • React
+          </p>
+        </div>
       </div>
     </footer>
   );

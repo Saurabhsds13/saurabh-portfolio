@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import LoadingScreen from "./components/LoadingScreen";
+import ScrollProgress from "./components/ScrollProgress";
+import CommandPalette from "./components/CommandPalette";
+import BackToTop from "./components/BackToTop";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -29,6 +32,9 @@ export default function App() {
   return (
     <>
       <LoadingScreen />
+      <ScrollProgress />
+      <CommandPalette />
+      <BackToTop />
       <div className="noise grid-bg scanlines relative min-h-screen" style={{ position: 'relative', zIndex: 2 }}>
         {isDark && <ParticleField />}
         <Navbar />
